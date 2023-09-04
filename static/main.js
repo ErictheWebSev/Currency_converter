@@ -12,7 +12,6 @@ function populateCountries(element) {
 }
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const fromCurrency = document.getElementById('fromCurrency');
   const toCurrency = document.getElementById('toCurrency');
@@ -27,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
      loadFlag(fromCurrency, fromFlag);
      loadFlag(toCurrency, toFlag);
+     
   exchange();
   });
   
@@ -62,9 +62,14 @@ function exchange() {
     console.log(data)
     const result = document.getElementById('result');
     const exchangeRate = data.conversion_rate;
-    
+      function formatCurrency(currency) {
+      return convertedAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
     const convertedAmount = (amount * exchangeRate).toFixed(2);
-    result.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        //recent changes 
+    result.textContent = `${amount} ${fromCurrency} =
+    ${formatCurrency(convertedAmount)} ${toCurrency}`;
+    //ends
   })
   .catch(error => {
      console.error("An error occurred:", error);
