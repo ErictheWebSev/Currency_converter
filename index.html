@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ricky Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="w-screen h-screen flex justify-center items-center
+    bg-gradient-to-r from-fuchsia-400 to-sky-400 bg-cover">
+      <div class="container w-['330px'] bg-white py-6 px-3 rounded-sm
+      w-['330px'] m-3 rounded-lg sm:w-1/2">
+        <img class="w-10 h-10 mx-auto" src="static/converter.png" alt="reload
+        your browser" />
+        
+        <h2 class="text-3xl text-center text-sky-900"> Currency Converter</h2>
+        
+        <div class="flex flex-col mt-3">
+          <label for="amount" class="text-lg py-2">Enter Amount:</label>
+          <input type="number" name="amount" id="amount" value="0" class="border
+          border-sky-900 rounded-md w-full p-3 focus:border-sky-500" />
+        </div>
+        
+        <div class="flex justify-between items-center m-4 gap-10">
+          <div class="flex flex-col">
+            <label for="fromCurrency" class="font-semibold text-xl mb-2">From</label>
+             <div class="border border-sky-900 px-8 py-4 rounded-lg flex">
+               <img class="w-10 h-10 -ml-6"
+               src="https://flagcdn.com/48x36/np.png" alt="" id="fromFlag" />
+              <select id="fromCurrency" class="w-auto bg-white"></select>              
+            </div>
+          </div>
+          
+          <div class="">
+            <button class="mx-5 mt-6 " id="reverse"><i class="fas
+            fa-exchange-alt text-2xl"></i></button>
+          </div>
+          <div class="flex flex-col">
+            <label for="toCurrency" class="font-semibold text-xl mb-2">To</label>
+            <div class="border border-sky-900 px-7 py-4 rounded-lg flex">
+              <img class="w-10 h-10 -ml-6"
+               src="https://flagcdn.com/48x36/np.png" alt="" id="toFlag" />
+              <select id="toCurrency" class="w-auto bg-white"></select>              
+            </div>
+
+          </div>
+        </div>       
+        
+        
+        <div class="text-2xl text-fuchsia-800 mx-3 my-5" id="result">
+        </div>
+        <hr class="w-2/3 m-4 mx-auto" />
+        
+        <button id="convert" class="bg-fuchsia-400 px-4 py-6 w-full text-center
+        text-2xl text-white rounded-lg font-semibold hover:bg-sky-500"> Get
+        Exchange Rate<span id="loader" class="hidden">...</span></button>
+        
+      </div>
+    </div>
+    <script src="static/main.js" type="module"></script>
+    <script src="static/country-list.js" type="module"></script>
+  </body>
+</html>
